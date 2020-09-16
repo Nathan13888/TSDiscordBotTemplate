@@ -6,9 +6,9 @@
   "author": "",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "npm run build && pm2 start --merge-logs --source-map-support . --name \"WCCBOT\" && pm2 logs WCCBOT",
-    "dev": "pm2 start --merge-logs --source-map-support . --watch --name \"WCCBOT\" && pm2 monit WCCBOT",
-    "stop": "pm2 stop WCCBOT",
+    "start": "npm run build && pm2 start --merge-logs --source-map-support . --name \"POLLBOT\" && pm2 logs POLLBOT",
+    "dev": "pm2 start --merge-logs --source-map-support . --watch --name \"POLLBOT\" && pm2 monit POLLBOT",
+    "stop": "pm2 stop POLLBOT",
     "restart": "npm run stop && npm run dev",
     "nodemon": "nodemon -r source-map-support/register .",
     "build": "tsc",

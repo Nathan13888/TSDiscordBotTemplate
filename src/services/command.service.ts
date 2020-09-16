@@ -20,7 +20,7 @@ export namespace CommandService {
     // TODO: add command cooldown
     Bot.api.on('message', async (msg) => {
       if (msg.author.bot) return; // bots
-      if (!Config.isProd && !hasPermit(msg.author.id)) return; // dev bot
+      // if (!Config.isProd && !hasPermit(msg.author.id)) return; // dev bot
       /* if (!msg.guild || !(msg.channel instanceof TextChannel)) {
         msg.reply('Commands are only allowed in server Text Channels');
       } else */if (msg.content.substring(0, 2) === Config.PREFIX) {
