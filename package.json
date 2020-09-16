@@ -3,8 +3,30 @@
   "version": "0.0.0",
   "description": "TBD",
   "main": "index.js",
+  "author": "",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && pm2 start --merge-logs --source-map-support . --name \"WCCBOT\" && pm2 logs WCCBOT",
+    "dev": "pm2 start --merge-logs --source-map-support . --watch --name \"WCCBOT\" && pm2 monit WCCBOT",
+    "stop": "pm2 stop WCCBOT",
+    "restart": "npm run stop && npm run dev",
+    "nodemon": "nodemon -r source-map-support/register .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.ts\" \"**/*.js\"",
+    "lint:fix": "npm run lint -- --fix",
+    "deploy": "git push heroku master",
+    "local": "heroku local worker",
+    "main:on": "heroku maintenance:on",
+    "main:off": "heroku maintenance:off",
+    "h:restart": "heroku ps:restart worker",
+    "h:start": "npm run main:off && heroku ps:scale worker=1 && npm run h:restart",
+    "h:stop": "npm run main:on && heroku ps:scale worker=0"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   },
   "repository": {
     "type": "git",
@@ -14,8 +36,6 @@
     "discord",
     "bot"
   ],
-  "author": "",
-  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Nathan13888/PollsBot/issues"
   },
