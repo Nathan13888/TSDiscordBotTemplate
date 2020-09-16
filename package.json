@@ -1,0 +1,23 @@
+{
+  "name": "pollsbot",
+  "version": "0.0.0",
+  "description": "TBD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathan13888/PollsBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Nathan13888/PollsBot/issues"
+  },
+  "homepage": "https://github.com/Nathan13888/PollsBot#readme"
+}
