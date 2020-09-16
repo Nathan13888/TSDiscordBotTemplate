@@ -24,6 +24,14 @@
     "h:start": "npm run main:off && heroku ps:scale worker=1 && npm run h:restart",
     "h:stop": "npm run main:on && heroku ps:scale worker=0"
   },
+  "contributors": [
+    {
+      "name": "Nathan Chung"
+    },
+    {
+      "name": "Leon Zhang"
+    }
+  ],
   "engines": {
     "node": "12.x",
     "npm": "6.x"
