@@ -1,8 +1,21 @@
+import {MessageAttachment, MessageEmbed, User} from 'discord.js';
 import {Bot} from '../bot';
+import {Logger} from './logger';
 // import * as pack from '../../package.json';
 export namespace Utils {
   export function delay(ms: number) {
     return new Promise((res) => setTimeout(res, ms));
+  }
+  export function getDefEmbed(): MessageEmbed {
+    return new MessageEmbed().setColor('FFFFFF');
+  }
+  export function sendDM(msg: string | MessageEmbed |
+    MessageAttachment, user: User): void {
+    try {
+      user.send(msg);
+    } catch {
+      Logger.log('An ERROR occured when trying to send a message to '+user.tag);
+    }
   }
   export function getUptime(): string {
     let duration: number = Bot.api.uptime;
