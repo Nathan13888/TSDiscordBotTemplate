@@ -6,6 +6,7 @@ import {Version} from '../commands/version';
 import {Message} from 'discord.js';
 import {Config} from '../config';
 import {Counter} from './counter.service';
+import {Help} from '../commands/help';
 export namespace CommandService {
   export function hasPermit(id: string): boolean {
     const permit: Config.Permit = Config.getPermit();
@@ -47,6 +48,7 @@ export namespace CommandService {
     });
 
     // COMMANDS
+    commands.push(new Help());
     // commands.push(new ());
     commands.push(new Version());
     commands.push(new Uptime());
