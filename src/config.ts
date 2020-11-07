@@ -15,7 +15,7 @@ export namespace Config {
       throw new Error('Environment variable "DISCORD_TOKEN" is missing.');
     }
     const envPrefix = ENV.PREFIX; // prefix override
-    if (envPrefix) {
+    if (envPrefix.length==2) {
       PREFIX = envPrefix;
     } else if (Config.isProd) {
       PREFIX = 'p:';
