@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@typegoose/typegoose": "7.3.5",
-    "@types/mongoose": "5.7.36",
+    "@types/mongoose": "5.11.96",
     "@typescript-eslint/eslint-plugin": "4.1.1",
     "@typescript-eslint/parser": "4.1.1",
     "eslint": "7.9.0",
